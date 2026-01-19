@@ -1,0 +1,21 @@
+# Ignore datasets
+*.csv
+*.parquet
+*.zip
+/IEEE Data/
+/data/
+
+# Ignore trained models
+*.pkl
+*.joblib
+*.txt
+
+# Ignore outputs
+/outputs/
+/runs/
+
+# Ignore notebooks checkpoints
+.ipynb_checkpoints/
+
+# Ignore system files
+.DS_Store
