@@ -1,6 +1,6 @@
 # Real-Time Fraud Detection System using LightGBM
 
-## 📌 Overview
+## Overview
 This project implements a **real-time fraudulent transaction detection system** using machine learning.  
 The goal is to **detect fraud with high recall while minimizing false positives**, which is a critical requirement in real-world payment systems.
 
@@ -8,7 +8,7 @@ The system is built using the **IEEE-CIS Fraud Detection dataset** and follows i
 
 ---
 
-## 🧠 Problem Statement
+## Problem Statement
 Fraud detection systems must:
 - Catch as much fraud as possible (**high recall**)
 - Avoid blocking legitimate users (**low false positives**)
@@ -19,7 +19,7 @@ This project addresses these challenges by modeling transaction behavior over ti
 
 ---
 
-## 📂 Dataset
+## Dataset
 - **Dataset:** IEEE-CIS Fraud Detection (Kaggle)
 - **Size:** ~590,000 transactions
 - **Characteristics:**
@@ -30,7 +30,7 @@ This project addresses these challenges by modeling transaction behavior over ti
 
 ---
 
-## 🏗️ System Architecture
+## System Architecture
 
 The system is designed as a production-style pipeline:
 
@@ -51,7 +51,7 @@ The system is designed as a production-style pipeline:
 
 ---
 
-## 🔧 Feature Engineering
+## Feature Engineering
 
 ### Base Features
 - Transaction amount and time features
@@ -74,7 +74,7 @@ All features were computed in a **leakage-safe, time-ordered manner**.
 
 ---
 
-## 🤖 Modeling Approach
+## Modeling Approach
 - **Model:** LightGBM (Gradient Boosted Decision Trees)
 - **Why LightGBM?**
   - Handles missing values naturally
@@ -85,7 +85,7 @@ All features were computed in a **leakage-safe, time-ordered manner**.
 
 ---
 
-## 📊 Evaluation Metrics
+## Evaluation Metrics
 Due to class imbalance, traditional accuracy is misleading.  
 The following metrics were used:
 
@@ -113,19 +113,23 @@ The following metrics were used:
 
 ---
 
-## 📈 Visualizations
+## Visualizations
 
 ### Precision–Recall Curve
+<img width="567" height="455" alt="ieee 1 img" src="https://github.com/user-attachments/assets/fdb71ab0-d6fe-4fce-abc9-c2aae58ed4cf" />
+
 Shows improved precision across most recall levels after adding behavioral and velocity features.
 
 ### False Positives vs Recall
+<img width="597" height="455" alt="ieee 2 img" src="https://github.com/user-attachments/assets/1e93c5e4-6717-4375-b7eb-b9929d38ca9a" />
+
 Demonstrates a clear reduction in false positives at the same recall level compared to the baseline model.
 
 *(Plots are included in the project report and outputs folder.)*
 
 ---
 
-## ⚡ Real-Time Scoring Simulation
+## Real-Time Scoring Simulation
 A streaming inference simulator was implemented to mimic real-world deployment:
 - Transactions processed in chronological order
 - Stateful entity feature storage
@@ -134,13 +138,9 @@ A streaming inference simulator was implemented to mimic real-world deployment:
 
 ---
 
-## 📉 Monitoring & Drift Detection
+##  Monitoring & Drift Detection
 To ensure long-term reliability:
 - **Population Stability Index (PSI)** was used to monitor:
   - Model score distributions
   - Key behavioral features
 - Drift thresholds trigger alerts when significant distribution shifts are detected.
-
----
-
-## 📁 Repository Structure
