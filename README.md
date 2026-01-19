@@ -96,7 +96,7 @@ The following metrics were used:
 
 ---
 
-## ✅ Results
+## Results
 
 ### Baseline Model
 - PR-AUC: **0.5386**
@@ -108,7 +108,7 @@ The following metrics were used:
 - Recall: **96.0%**
 - False Positives: **59,810**
 
-### 🔑 Key Improvement
+### Key Improvement
 - **False positives reduced by 9.28% while maintaining 96% fraud recall**
 
 ---
